@@ -1,33 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package netbeanstest;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import static java.time.Clock.system;
 import java.util.Random;
 
-/**
- * Nur zum testen hier
- * @author Markus Kulas
- */
 public class NetbeansTest {
 
-    public static void main(String[] args) {
- 
-       int min = 2;
-       int max = 5;
-    System.out.println("Diese Random Nummer: "
-            + randInt(min,max) + "\n befindet sich zwischen " + min + "und " + max);
+    static InputStreamReader input = new InputStreamReader(System.in);
+    static BufferedReader keyboardInput = new BufferedReader(input);
+
+    //MAIN Methode
+    public static void main(String[] args) throws IOException {
+
+        int min = 1;
+        String eingabe;
+  
+        System.out.print("Maximalwert für Randomzahl eingeben:");
+      
+        eingabe = keyboardInput.readLine();
+        int max = Integer.parseInt(eingabe.toString());
+        
+        System.out.println("\nDu hast " + eingabe + " eingebeben!\n");
+        
+        System.out.println("Diese Random Nummer: "
+                + randInt(min, max) + "\nbefindet sich zwischen " + min + " und " + max + ".");
+        
     }
 
+
     
+    //Random Create Methode
     public static int randInt(int min, int max) {
-        
+
         Random rand = new Random();
-        int randomNum = rand.nextInt((max - min) + 1) + min;      
+        int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
-        
     }
-    
+
 }
