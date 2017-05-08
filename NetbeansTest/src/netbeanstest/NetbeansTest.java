@@ -5,17 +5,29 @@
  */
 package netbeanstest;
 
+import java.util.Random;
+
 /**
  *
  * @author Markus Kulas
  */
 public class NetbeansTest {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+ 
+       int min = 2;
+       int max = 5;
+    System.out.println("Diese Random Nummer: "
+            + randInt(min,max) + "\n befindet sich zwischen " + min + "und " + max);
+    }
+
+    
+    public static int randInt(int min, int max) {
+        
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;      
+        return randomNum;
+        
     }
     
 }
