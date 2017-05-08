@@ -8,7 +8,7 @@ package netbeanstest;
 import java.util.Random;
 
 /**
- *
+ * Nur zum testen hier
  * @author Markus Kulas
  */
 public class NetbeansTest {
