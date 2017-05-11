@@ -3,7 +3,6 @@ package netbeanstest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import static java.time.Clock.system;
 import java.util.Random;
 
 public class NetbeansTest {
@@ -12,14 +11,18 @@ public class NetbeansTest {
     static BufferedReader keyboardInput = new BufferedReader(input);
 
     //MAIN Methode
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
         int min = 1;
-        String eingabe;
+        String eingabe ="";
   
         System.out.print("Maximalwert für Randomzahl eingeben:");
-      
-        eingabe = keyboardInput.readLine();
+
+        try {
+            eingabe = keyboardInput.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         int max = Integer.parseInt(eingabe.toString());
         
         System.out.println("\nDu hast " + eingabe + " eingebeben!\n");
@@ -38,5 +41,7 @@ public class NetbeansTest {
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
-
+    
+    
+    
 }
